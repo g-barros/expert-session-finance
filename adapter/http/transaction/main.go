@@ -1,12 +1,12 @@
 package transaction
 
 import (
-	"net/http"
+	"encoding/json"
+	"fmt"
 	"github.com/g-barros/expert-session-finance/model/transaction"
 	"github.com/g-barros/expert-session-finance/util"
-	"encoding/json"
 	"io/ioutil"
-	"fmt"
+	"net/http"
 )
 
 // GetTransactions lista as transações
@@ -20,9 +20,9 @@ func GetTransactions(w http.ResponseWriter, r *http.Request) {
 
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
-			Title: "Salário",
-			Amount: 1200.0,
-			Type: 0,
+			Title:     "Salário",
+			Amount:    1200.0,
+			Type:      0,
 			CreatedAt: util.StringToTime("2020-09-15T13:49:50"),
 		},
 	}

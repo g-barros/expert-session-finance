@@ -1,10 +1,11 @@
 package http
 
 import (
-	"net/http"
-	"github.com/g-barros/expert-session-finance/adapter/http/transaction"
 	"github.com/g-barros/expert-session-finance/adapter/http/actuator"
+	"github.com/g-barros/expert-session-finance/adapter/http/transaction"
+	"net/http"
 )
+
 // Init inicia servidor e rotas
 func Init() {
 	http.HandleFunc("/transactions", transaction.GetTransactions)
